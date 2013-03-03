@@ -100,7 +100,7 @@
     )
 ); 
 
-$index = (isset($_GET['index'])) ? $_GET['index'] : rand(0, count($photos) -1);
+$index = (isset($_GET['index'])) ? $_GET['index'] : rand(1, count($photos) -1);
 $index = (isset($photos[$index])) ? $index : 1;
 $photo = $photos[$index];
 $photo[0] = (isset($photo[0])) ? $photo[0] : 'top left';
