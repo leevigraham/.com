@@ -1,109 +1,134 @@
 <?php $photos = array(
     0 => array(
+        '0.jpg',
         'center left',
         'Edwin van Nuil',
         'http://www.flickr.com/photos/vannuil/5036173842/'
     ),
     1 => array(
+        '01.jpg',
         'center center',
         'Simon Campbell',
         'http://www.flickr.com/photos/erskinecorp/5046231373/in/photosof-leevigraham/',
     ),
     2 => array(
+        '02.jpg',
         'center right'
     ),
     3 => array(
+        '03.jpg',
         'center top'
     ),
     4 => array(
+        '04.jpg',
         'center center'
     ),
     5 => array(
+        '05.jpg',
         '85% 30%',
         'Nate Croft',
         'http://www.flickr.com/photos/natecroft/5074299298/in/photosof-leevigraham/',
     ),
     6 => array(
+        '06.jpg',
         '10% top',
         'Emily Lewis',
         'http://www.flickr.com/photos/eplewis/4679543476/in/photosof-leevigraham/',
     ),
     7 => array(
+        '07.jpg',
         'center right',
         'Low',
         'http://www.flickr.com/photos/low/4723965560/in/photosof-leevigraham/',
     ),
     8 =>  array(
+        '08.jpg',
         'top left',
         'Nate Croft',
         'http://www.flickr.com/photos/natecroft/4767007624/in/photosof-leevigraham/',
     ),
     9 => array(
+        '09.jpg',
         'top center',
         'Nate Croft',
         'http://www.flickr.com/photos/natecroft/5071800340/in/photosof-leevigraham/',
     ),
     10 => array(
+        '10.jpg',
         '10% 0',
         'Simon Collison',
         'http://www.flickr.com/photos/collylogic/4670892960/in/photosof-leevigraham/',
     ),
     11 => array(
+        '11.jpg',
         'top left',
         'Simon Collison',
         'http://www.flickr.com/photos/collylogic/5042413411/in/photosof-leevigraham/'
     ),
     12 => array(
+        '12.jpg',
         'top center',
         'Joel Bradbury',
         'http://www.flickr.com/photos/joelbradbury/4049100991/in/photosof-leevigraham/'
     ),
     13 => array(
+        '13.jpg',
         '30% 0%',
         'Joel Bradbury',
         'http://www.flickr.com/photos/joelbradbury/4049118887/in/photosof-leevigraham/'
     ),
     14 => array(
+        '14.jpg',
         'center center',
         'Joel Bradbury',
         'http://www.flickr.com/photos/joelbradbury/4049873546/in/photosof-leevigraham/'
     ),
     15 => array(
+        '15.jpg',
         '30% 0%',
         'Joel Bradbury',
         'http://www.flickr.com/photos/joelbradbury/4049841806/in/photosof-leevigraham/',
     ),
     16 => array(
+        '16.jpg',
         'center center',
         'Me',
         'http://www.flickr.com/photos/leevigraham/4061250028/in/photosof-leevigraham/'
     ),
     17 => array(
+        '17.jpg',
         'left top',
         'Simon Collison',
         'http://www.flickr.com/photos/collylogic/4670832819/in/photosof-leevigraham/'
     ),
     18 => array(
+        '18.jpg',
         'center center',
         'Chris Buttery',
         'http://www.flickr.com/photos/buttahz/6010730443/in/photosof-leevigraham/'
     ),
     19 => array(
+        '19.jpg',
         '60% 0%',
         'Simon Collison',
         'http://www.flickr.com/photos/low/4723315739/in/photosof-leevigraham/'
     ),
     20 => array(
+        '20.jpg',
         'center top',
         'Nate Croft',
         'http://www.flickr.com/photos/natecroft/4052220208/'
+    ),
+    21 => array(
+        '21.gif',
+        'center top'
     )
 ); 
 
 $index = (isset($_GET['index'])) ? $_GET['index'] : rand(1, count($photos) -1);
 $index = (isset($photos[$index])) ? $index : 1;
 $photo = $photos[$index];
-$photo[0] = (isset($photo[0])) ? $photo[0] : 'top left';
+$photo[1] = (isset($photo[1])) ? $photo[1] : 'top left';
 
 ?>
 
@@ -124,7 +149,7 @@ $photo[0] = (isset($photo[0])) ? $photo[0] : 'top left';
             height:100%;
         }
         #body {
-            background: url(/backgrounds/<?php printf('%02d', $index); ?>.jpg) no-repeat <?php print($photo[0]); ?> fixed; 
+            background: url(/backgrounds/<?php print($photo[0]); ?>) no-repeat <?php print($photo[1]); ?> fixed; 
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -199,9 +224,9 @@ $photo[0] = (isset($photo[0])) ? $photo[0] : 'top left';
             <li><a href="http://newism.com.au">Newism</a></li>
             <li><a href="mailto:info@leevigraham.com">Email</a></li>
         </ul>
-        <?php if(isset($photo[1])): ?>
+        <?php if(isset($photo[2])): ?>
         <p id="credit">
-            Photo by: <a href="<?php print($photo[2]); ?>"><?php print($photo[1]); ?></a>
+            Photo by: <a href="<?php print($photo[2]); ?>"><?php print($photo[2]); ?></a>
         </p>
         <?php endif; ?>
             
